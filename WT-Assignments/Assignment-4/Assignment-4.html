@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html>
+<head><script>
+ 
+        function display() {
+        if(validate_form()){
+            DispWin = window.open('','NewWin', 'toolbar=yes,status=no,width=300,height=200')
+            message = "<ul><li><b>Name: </b>" + document.getElementById("myInput1").value;
+            message += "<li><b>Gender: </b>" + displayRadioValue();
+            
+            message += "<li><b>Email: </b>" + document.getElementById("myInput4").value;
+            message += "<li><b>Phone Number: </b>" + document.getElementById("myInput5").value;
+            DispWin.document.write(message);
+            }
+        }
+        function validate_form() {
+            var phoneno = /^\d{10}$/;
+
+            if(!(document.getElementById("myInput5").value.match(phoneno))){
+                alert("phone number is wrong.");
+                return false;
+            }
+
+            if (document.getElementById("myInput1").value == "") {
+                alert("Please fill Your Name");
+                return false;
+            }
+
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.getElementById("myInput4").value)) {
+                alert("You have entered an invalid email address!")
+                return false
+            }
+            alert("sucessfully Submitted");
+            return true;
+        }
+        function displayRadioValue() { 
+            var ele = document.getElementsByName('gn'); 
+                if(ele[0].checked) 
+                        return "Male"; 
+                else
+                        return "Female";
+        } 
+      function blurFunction() 
+       { 
+    	document.getElementById("myInput1").style.background = "skyblue";
+       }
+        
+</script>
+<style type="text/css">
+	
+	body{
+
+		background-image: linear-gradient(to right,#159957,#155799)
+	}
+</style>
+</head>
+<body>
+
+<form action="" method="POST" name="form1">
+<fieldset>
+	<legend align="center"><h1><font color="white"><center>Login Page</center></font></h1>
+</legend>
+<table align="center">
+<tr>
+	<td>
+	<h3><font color="white">Full Name<span style="color:red">*</span>:</font></h3>
+	</td>
+	<td>
+	<input type="text" placeholder="Enter your full name"  id="myInput1" name="fname"  required onblur="blurFunction()" onblur="myFunction()"><br>
+	</td>
+</tr>
+
+<tr>
+	<td>
+	<h3><font color="white">Create Username<span style="color:red">*</span>:<br></font><h3>
+	</td>
+	<td>
+	<input type="text" placeholder="Create an Username" name="lastname" required><br>
+	</td>
+</tr>
+
+<tr>
+	<td>
+	<h3><font color="white">Gender<span style="color:red">*</span>:<br></font></h3>
+	</td>
+	<td>
+	<input type="radio"name="gn" id="myInput2"  value="Male" checked><font 		color="white">Male</font><br>
+	<input type="radio" name="gn" id="myInput2" value="Female"><font 	color="white">Female</font><br>
+	</td>
+</tr>
+<tr>
+	<td>
+	<h3><font color="white">Enter Date of birth<span style="color:red">*</span>:</font></h3>
+	</td>
+	<td>
+	<input type="Date" name="dob" required>
+	</td>
+</tr>
+	<td>
+	<h3><font color="white">Email ID:</font></h3>
+	</td>
+	<td>
+	<input type="email" id="myInput4" name="email" placeholder="Enter valid email." required><br>
+	</td>
+</tr>
+<tr>
+	<td>
+	
+	<h3><font color="white">Phone No<span style="color:red">*</span>:</h3><br>
+	</td>
+	<td>
+	<input type="tel"maxlength="10" name="ph" placeholder="Enter valid 10 digit number" pattern="[6-9]{1}[0-9]{9}" required id="myInput5">
+	</td>
+</tr>
+<tr>
+	<td>
+	<h3><font color="white">Create New Password<span style="color:red">*</span>:</h3>
+</td>
+	<td>
+		<input type="password" placeholder="Enter min 8 characters" name="password" minlength="5" pattern="[A-Za-Z1-9]{8}"name="pw"
+required id="pw">
+
+	</td>
+
+
+</tr>
+<tr>
+<td>
+<button onclick="display()">Submit</button>
+<input type="Reset" value="Reset" >
+</td>
+</tr>
+</fieldset>
+
+</table>
+</form>
+
+
+</body>
+
+
+</html>
