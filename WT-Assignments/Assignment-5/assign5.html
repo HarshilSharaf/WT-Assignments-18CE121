@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="assign5.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"></head>
+<body background="bg.jpg">
+<div><center><h1>   &nbsp;&nbsp;&nbsp;&nbsp;National Workshop On WEB Technology!</h1></center></div>
+<form action="database.php" method="POST" >
+  <div class="container">
+    Your First Name: &nbsp;&nbsp;&nbsp; <input type="text" name="fname" placeholder="First Name" required><br><br>
+  Your Last Name: &nbsp;&nbsp;&nbsp; <input type="text" name="lname" placeholder="Last Name" required><br><br>
+  Your Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" width="100px" name="email" placeholder="e.g.abc@gmail.com"required><br><br><br>
+  Your Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="phone" placeholder="Phone no."required><br><br>
+  Select Your Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <select name="country">
+    <option value="India">India</option>
+    <option value="America">America</option>
+    <option value="Canada">Canada</option>
+    <option value="Australia">Australia</option>
+    <option value="Other">Other</option>
+    </select><br><br>
+    You are:<br><br>
+     <input type="radio" id="student" name="pro" value="student" >
+  <label for="male">Student</label>
+  <input  type="radio" id="Faculty Member" name="pro" value="Faculty Member">
+  <label for="female">Faculty Member</label>
+  <input type="radio" id="professional" name="pro" value="professional">
+  <label for="other">Professional</label>
+  <input type="radio" id="company" name="pro" value="company">
+  <label for="other">Company/Firm Representative</label>
+  <br><br><br>
+  <textarea name="reason" placeholder="Reason for Participating in Workshop" rows="5" cols="50"></textarea><br><br><br>
+  <br><br>
+    <div class="clearfix">
+      
+      <button type="submit" class="btn1">Submit</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
